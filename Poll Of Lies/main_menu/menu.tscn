@@ -1,64 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://bsk12qw6h6qxn"]
+[gd_scene load_steps=12 format=3 uid="uid://bsk12qw6h6qxn"]
 
 [ext_resource type="Script" path="res://main_menu/Menu.gd" id="1_ws5nv"]
+[ext_resource type="Theme" uid="uid://b2g8ex2eim5as" path="res://util/game_theme.tres" id="2_gfi3c"]
 [ext_resource type="Texture2D" uid="uid://b1i86i2ko27eu" path="res://main_menu/Blue_witch/B_witch_idle.png" id="2_p37gq"]
-[ext_resource type="FontFile" uid="uid://luamrhyo3t67" path="res://font/Minecraft.ttf" id="2_tk2np"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otq56"]
 bg_color = Color(0.172549, 0.352941, 0.278431, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7kcx"]
-content_margin_top = 9.0
-bg_color = Color(0.694118, 0.647059, 0.784314, 1)
-border_width_bottom = 5
-border_color = Color(0.230469, 0.195313, 0.289063, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 10
-shadow_color = Color(0, 0, 0, 0.278431)
-shadow_size = 3
-shadow_offset = Vector2(2, 2)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_korja"]
-content_margin_top = 9.0
-bg_color = Color(0.929688, 0.929688, 0.921875, 1)
-border_width_bottom = 5
-border_color = Color(0.308594, 0.640625, 0.644531, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 10
-shadow_color = Color(0, 0, 0, 0.278431)
-shadow_size = 3
-shadow_offset = Vector2(2, 2)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjoc0"]
-content_margin_top = 9.0
-bg_color = Color(0.914063, 0.871094, 0.792969, 1)
-border_width_bottom = 5
-border_color = Color(0.550781, 0.761719, 0.855469, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 10
-shadow_color = Color(0, 0, 0, 0.278431)
-shadow_size = 3
-shadow_offset = Vector2(2, 2)
-
-[sub_resource type="Theme" id="Theme_e6qff"]
-default_font = ExtResource("2_tk2np")
-Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_color = Color(0.230469, 0.195313, 0.289063, 1)
-Button/colors/font_pressed_color = Color(0.560784, 0.764706, 0.847059, 1)
-Button/constants/icon_max_width = 2
-Button/font_sizes/font_size = 25
-Button/styles/hover = SubResource("StyleBoxFlat_n7kcx")
-Button/styles/normal = SubResource("StyleBoxFlat_korja")
-Button/styles/pressed = SubResource("StyleBoxFlat_gjoc0")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3q57v"]
 atlas = ExtResource("2_p37gq")
@@ -138,7 +85,7 @@ offset_right = -168.901
 offset_bottom = 92.5
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_e6qff")
+theme = ExtResource("2_gfi3c")
 theme_override_constants/separation = 5
 
 [node name="Start" type="Button" parent="Panel/VBoxContainer"]
