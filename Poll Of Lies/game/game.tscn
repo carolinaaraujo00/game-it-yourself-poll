@@ -1,8 +1,26 @@
-[gd_scene format=3 uid="uid://cd4p3r0eshqtx"]
+[gd_scene load_steps=3 format=3 uid="uid://cd4p3r0eshqtx"]
 
-[node name="game" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://cv0lmqegtykre" path="res://game/posts/false/me.jpg" id="1_31m64"]
+[ext_resource type="Texture2D" uid="uid://c74m0ulslxhub" path="res://game/posts/true/me_2.jpg" id="2_j4hwl"]
 
-[node name="Label" type="Label" parent="."]
+[node name="game" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
-offset_bottom = 23.0
-text = "o eduardo cheira mal"
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Post1" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_31m64")
+stretch_mode = 4
+
+[node name="Post2" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_j4hwl")
+stretch_mode = 4

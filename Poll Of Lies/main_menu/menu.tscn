@@ -1,6 +1,110 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsk12qw6h6qxn"]
+[gd_scene load_steps=15 format=3 uid="uid://bsk12qw6h6qxn"]
 
 [ext_resource type="Script" path="res://main_menu/Menu.gd" id="1_ws5nv"]
+[ext_resource type="Texture2D" uid="uid://b1i86i2ko27eu" path="res://main_menu/Blue_witch/B_witch_idle.png" id="2_p37gq"]
+[ext_resource type="FontFile" uid="uid://luamrhyo3t67" path="res://font/Minecraft.ttf" id="2_tk2np"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7kcx"]
+bg_color = Color(0.5625, 0.765625, 0.847656, 1)
+border_width_bottom = 5
+border_color = Color(0.214844, 0.390625, 0.894531, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 0.278431)
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_korja"]
+content_margin_top = 9.0
+bg_color = Color(0.929688, 0.929688, 0.921875, 1)
+border_width_bottom = 5
+border_color = Color(0.183594, 0.371094, 0.871094, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 0.278431)
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjoc0"]
+bg_color = Color(0.914063, 0.871094, 0.792969, 1)
+border_width_bottom = 5
+border_color = Color(0.550781, 0.761719, 0.855469, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 0.278431)
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="Theme" id="Theme_e6qff"]
+default_font = ExtResource("2_tk2np")
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0.214844, 0.390625, 0.894531, 1)
+Button/colors/font_hover_pressed_color = Color(0.560784, 0.764706, 0.847059, 1)
+Button/colors/font_pressed_color = Color(0.560784, 0.764706, 0.847059, 1)
+Button/constants/icon_max_width = 2
+Button/font_sizes/font_size = 25
+Button/styles/hover = SubResource("StyleBoxFlat_n7kcx")
+Button/styles/normal = SubResource("StyleBoxFlat_korja")
+Button/styles/pressed = SubResource("StyleBoxFlat_gjoc0")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q57v"]
+atlas = ExtResource("2_p37gq")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah1sd"]
+atlas = ExtResource("2_p37gq")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgky2"]
+atlas = ExtResource("2_p37gq")
+region = Rect2(0, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4guly"]
+atlas = ExtResource("2_p37gq")
+region = Rect2(0, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4oppc"]
+atlas = ExtResource("2_p37gq")
+region = Rect2(0, 192, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqlhc"]
+atlas = ExtResource("2_p37gq")
+region = Rect2(0, 240, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kltmq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q57v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ah1sd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgky2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4guly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4oppc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqlhc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -11,32 +115,48 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ws5nv")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+offset_right = 1024.0
+offset_bottom = 600.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -28.0
-offset_top = -33.0
-offset_right = 28.0
-offset_bottom = 33.0
+offset_left = -328.9
+offset_top = -77.5
+offset_right = -168.901
+offset_bottom = 92.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_e6qff")
+theme_override_constants/separation = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Start" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 3
 text = "START"
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Credits" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+text = "CREDITS"
+
+[node name="Quit" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 text = "QUIT"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="TinyWitch" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(153, 300)
+scale = Vector2(5.1875, 5.1875)
+sprite_frames = SubResource("SpriteFrames_kltmq")
+autoplay = "default"
+frame_progress = 0.530337
+
+[connection signal="pressed" from="Panel/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
