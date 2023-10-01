@@ -3,12 +3,18 @@ extends Node
 const GAME_SCENE = "res://game/game.tscn"
 const MENU_SCENE = "res://main_menu/menu.tscn"
 
+const STR_SCORE : String = "SCORE: "
+
+const ANIM_LEFT_START_HOVERING = "left_post_start_hovering"
+const ANIM_LEFT_STOP_HOVERING = "left_post_stop_hovering"
+const ANIM_RIGHT_START_HOVERING = "right_post_start_hovering"
+const ANIM_RIGHT_STOP_HOVERING = "left_post_stop_hovering"
+
 const FAKE_POST_PATH = "res://game/posts/fake/"
 const TRUE_POST_PATH = "res://game/posts/true/"
 
 var FAKE_POST_ARRAY = []
 var TRUE_POST_ARRAY = []
-
 
 func _init() -> void:
 	# Get all the images from the fake post folder onto the fake post array

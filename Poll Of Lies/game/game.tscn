@@ -1,8 +1,178 @@
-[gd_scene load_steps=4 format=3 uid="uid://br2la4pgvsqmu"]
+[gd_scene load_steps=10 format=3 uid="uid://br2la4pgvsqmu"]
 
 [ext_resource type="Script" path="res://game/Game.gd" id="1_nty27"]
 [ext_resource type="Theme" uid="uid://b2g8ex2eim5as" path="res://util/game_theme.tres" id="2_id01g"]
 [ext_resource type="Script" path="res://game/posts/Post.gd" id="3_ttax2"]
+
+[sub_resource type="Animation" id="Animation_nt3ak"]
+resource_name = "new"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/LeftMarginContainer:theme_override_constants/margin_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(0.435275, 0.435),
+"update": 1,
+"values": [20, 10]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/LeftMarginContainer:theme_override_constants/margin_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(0.435275, 0.435),
+"update": 1,
+"values": [10, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/LeftMarginContainer:theme_override_constants/margin_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(0.435275, 0.435),
+"update": 1,
+"values": [20, 10]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/LeftMarginContainer:theme_override_constants/margin_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(0.435275, 0.435),
+"update": 1,
+"values": [20, 10]
+}
+
+[sub_resource type="Animation" id="Animation_xmc75"]
+resource_name = "left_post_stop_hovering"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/LeftMarginContainer:theme_override_constants/margin_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(0.435, 0.435),
+"update": 1,
+"values": [10, 20]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/LeftMarginContainer:theme_override_constants/margin_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(0.435, 0.435),
+"update": 1,
+"values": [5, 10]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/LeftMarginContainer:theme_override_constants/margin_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(0.435, 0.435),
+"update": 1,
+"values": [10, 20]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/LeftMarginContainer:theme_override_constants/margin_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(0.435, 0.435),
+"update": 1,
+"values": [10, 20]
+}
+
+[sub_resource type="Animation" id="Animation_ijaer"]
+resource_name = "right_post_start_hovering"
+
+[sub_resource type="Animation" id="Animation_f7hct"]
+resource_name = "right_post_stop_hovering"
+
+[sub_resource type="Animation" id="Animation_8w8f3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/LeftMarginContainer:theme_override_constants/margin_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [20]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/LeftMarginContainer:theme_override_constants/margin_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/LeftMarginContainer:theme_override_constants/margin_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [20]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/LeftMarginContainer:theme_override_constants/margin_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [20]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pq3wy"]
+_data = {
+"RESET": SubResource("Animation_8w8f3"),
+"left_post_start_hovering": SubResource("Animation_nt3ak"),
+"left_post_stop_hovering": SubResource("Animation_xmc75"),
+"right_post_start_hovering": SubResource("Animation_ijaer"),
+"right_post_stop_hovering": SubResource("Animation_f7hct")
+}
 
 [node name="game" type="Node"]
 script = ExtResource("1_nty27")
@@ -22,7 +192,7 @@ layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 15
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer"]
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("2_id01g")
@@ -32,7 +202,7 @@ text = "SCORE: "
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="LeftMarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 20
@@ -40,12 +210,12 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="LeftPost" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+[node name="LeftPost" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftMarginContainer"]
 layout_mode = 2
 expand_mode = 4
 script = ExtResource("3_ttax2")
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="RightMarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 20
@@ -53,7 +223,12 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="RightPost" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
+[node name="RightPost" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/RightMarginContainer"]
 layout_mode = 2
 expand_mode = 4
 script = ExtResource("3_ttax2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pq3wy")
+}

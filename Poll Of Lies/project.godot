@@ -23,7 +23,6 @@ Util="*res://util/util.tscn"
 
 window/size/viewport_width=1024
 window/size/viewport_height=600
-window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
