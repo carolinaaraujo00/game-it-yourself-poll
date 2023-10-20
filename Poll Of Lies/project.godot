@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Util="*res://util/util.tscn"
+Util="*res://util/Util.gd"
 
 [display]
 

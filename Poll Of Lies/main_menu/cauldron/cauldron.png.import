@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds3tg6yfxlhrs"
-path="res://.godot/imported/B_witch_take_damage.png-bce3098156f4b52be4161edf827e6425.ctex"
+uid="uid://dq2jl0mp36nmp"
+path="res://.godot/imported/cauldron.png-30edc4f685f94fdefd1faaf989372eed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main_menu/blue_witch/B_witch_take_damage.png"
-dest_files=["res://.godot/imported/B_witch_take_damage.png-bce3098156f4b52be4161edf827e6425.ctex"]
+source_file="res://main_menu/cauldron/cauldron.png"
+dest_files=["res://.godot/imported/cauldron.png-30edc4f685f94fdefd1faaf989372eed.ctex"]
 
 [params]
 

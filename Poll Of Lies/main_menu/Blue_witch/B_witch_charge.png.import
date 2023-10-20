@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c735dj1vw731n"
-path="res://.godot/imported/B_witch_charge.png-51b0f786c91fc0d8eafc0526ca349ea6.ctex"
+path="res://.godot/imported/B_witch_charge.png-9b3eec14f1782641f4c5d73d2079e4cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main_menu/Blue_witch/B_witch_charge.png"
-dest_files=["res://.godot/imported/B_witch_charge.png-51b0f786c91fc0d8eafc0526ca349ea6.ctex"]
+source_file="res://main_menu/blue_witch/B_witch_charge.png"
+dest_files=["res://.godot/imported/B_witch_charge.png-9b3eec14f1782641f4c5d73d2079e4cb.ctex"]
 
 [params]
 
