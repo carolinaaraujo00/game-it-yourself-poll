@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds3tg6yfxlhrs"
-path="res://.godot/imported/B_witch_take_damage.png-bce3098156f4b52be4161edf827e6425.ctex"
+uid="uid://ckan14da3cdly"
+path="res://.godot/imported/spidy.png-bd6b3dfc41aa8d7f8e71ce8e5707ea66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main_menu/blue_witch/B_witch_take_damage.png"
-dest_files=["res://.godot/imported/B_witch_take_damage.png-bce3098156f4b52be4161edf827e6425.ctex"]
+source_file="res://main_menu/sprites/spider/spidy.png"
+dest_files=["res://.godot/imported/spidy.png-bd6b3dfc41aa8d7f8e71ce8e5707ea66.ctex"]
 
 [params]
 
