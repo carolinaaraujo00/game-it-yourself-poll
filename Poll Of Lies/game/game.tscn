@@ -210,9 +210,13 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainerPosts/LeftMarginContainer"]
+layout_mode = 2
+
 [node name="LeftPost" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainerPosts/LeftMarginContainer"]
 layout_mode = 2
-expand_mode = 4
+expand_mode = 1
+stretch_mode = 5
 script = ExtResource("3_ttax2")
 
 [node name="RightMarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainerPosts"]
@@ -223,9 +227,13 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainerPosts/RightMarginContainer"]
+layout_mode = 2
+
 [node name="RightPost" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainerPosts/RightMarginContainer"]
 layout_mode = 2
-expand_mode = 4
+expand_mode = 1
+stretch_mode = 5
 script = ExtResource("3_ttax2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

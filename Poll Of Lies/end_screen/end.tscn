@@ -388,8 +388,11 @@ animations = [{
 script = ExtResource("1_yqypu")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 1024.0
-offset_bottom = 600.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mqkw2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
@@ -449,7 +452,7 @@ scale = Vector2(8.4675, 8.4675)
 sprite_frames = SubResource("SpriteFrames_err6l")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.98501
+frame_progress = 0.780713
 
 [node name="Spider" type="AnimatedSprite2D" parent="Panel"]
 position = Vector2(842, 88)

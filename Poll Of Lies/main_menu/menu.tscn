@@ -611,19 +611,15 @@ _data = {
 "game_introduction": SubResource("Animation_1g2f5")
 }
 
-[node name="Menu" type="Control"]
-layout_mode = 3
+[node name="Menu" type="Node"]
+script = ExtResource("1_ws5nv")
+
+[node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ws5nv")
-
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-offset_right = 1024.0
-offset_bottom = 600.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_otq56")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
