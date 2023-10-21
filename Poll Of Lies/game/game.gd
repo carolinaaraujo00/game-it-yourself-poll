@@ -78,10 +78,8 @@ func update_fail_attempts() -> void:
 
 
 func verify_win_or_loss() -> void:
-	if number_failed_attempts == 2:
+	if number_failed_attempts == _fail_attempt_array.size():
 		# If the player has reached 3 failed attempts
-			# number_failed_attempts started at 0, so when number_failed_attempts = 2, 
-			# the player has already failed a total of 3 times, so they lose!
 		# GAME OVER - PLAYER WINS
 		Util.player_has_won = false
 		Util.player_score = score
