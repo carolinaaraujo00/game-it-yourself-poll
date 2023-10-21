@@ -449,10 +449,10 @@ scale = Vector2(8.4675, 8.4675)
 sprite_frames = SubResource("SpriteFrames_err6l")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.257638
+frame_progress = 0.98501
 
 [node name="Spider" type="AnimatedSprite2D" parent="Panel"]
-position = Vector2(840, 88)
+position = Vector2(842, 88)
 scale = Vector2(5.6, 5.6)
 sprite_frames = SubResource("SpriteFrames_kky7i")
 animation = &"up_and_down"

@@ -20,11 +20,16 @@ const STR_FINAL_SCORE : String = "FINAL SCORE:"
 
 # ANIMATIONS
 const ANIM_GAME_INTRODUCTION = "game_introduction"
-const ANIM_LEFT_START_HOVERING = "left_post_start_hovering"
-const ANIM_LEFT_STOP_HOVERING = "left_post_stop_hovering"
-const ANIM_RIGHT_START_HOVERING = "right_post_start_hovering"
-const ANIM_RIGHT_STOP_HOVERING = "left_post_stop_hovering"
 const ANIM_CREDITS = "credits_animation"
+const ANIM_FAIL_ARRAY = [
+	"first_fail_appear",
+	"second_fail_appear",
+	"third_fail_appear"
+]
+#const ANIM_LEFT_START_HOVERING = "left_post_start_hovering"
+#const ANIM_LEFT_STOP_HOVERING = "left_post_stop_hovering"
+#const ANIM_RIGHT_START_HOVERING = "right_post_start_hovering"
+#const ANIM_RIGHT_STOP_HOVERING = "left_post_stop_hovering"
 
 # IMAGE PATHS
 const FAKE_POST_PATH = "res://game/posts/fake/"
@@ -39,7 +44,7 @@ var TRUE_POST_ARRAY_COPY
 
 # PLAYER VARIABLES
 var player_has_visited_menu : bool = false
-var player_has_won : bool = true
+var player_has_won : bool = false
 var player_score : int = 0
 
 

@@ -1,11 +1,12 @@
 extends Node
 
+@onready var _animation_player = $AnimationPlayer
 @onready var _left_post = $MarginContainer/VBoxContainer/HBoxContainerPosts/LeftMarginContainer/LeftPost
 @onready var _right_post = $MarginContainer/VBoxContainer/HBoxContainerPosts/RightMarginContainer/RightPost
 @onready var _score_label = $MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainer/ScoreLabel
 @onready var _fail_attempt_array = [
-	$MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail3/Fail3,
-	$MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail2/Fail2,
+	$MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail3/Fail3, 
+	$MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail2/Fail2, 
 	$MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail1/Fail1
 ]
 
@@ -28,8 +29,8 @@ func _ready():
 	assign_random_images_to_posts()
 	
 	# Assign each their own animation for hovering
-	_left_post.assign_animation(Util.ANIM_LEFT_START_HOVERING, Util.ANIM_LEFT_STOP_HOVERING)
-	_right_post.assign_animation(Util.ANIM_RIGHT_START_HOVERING, Util.ANIM_RIGHT_STOP_HOVERING)
+#	_left_post.assign_animation(Util.ANIM_LEFT_START_HOVERING, Util.ANIM_LEFT_STOP_HOVERING)
+#	_right_post.assign_animation(Util.ANIM_RIGHT_START_HOVERING, Util.ANIM_RIGHT_STOP_HOVERING)
 
 
 func assign_random_images_to_posts() -> void:
@@ -69,20 +70,20 @@ func update_score() -> void:
 
 func update_fail_attempts() -> void:
 	# Make the red balls visible, to show the player if they have 1, 2 or 3 failed attempts
-	_fail_attempt_array[number_failed_attempts].visible = true
+	_animation_player.play(Util.ANIM_FAIL_ARRAY[number_failed_attempts])
+	await _animation_player.animation_finished
+	
 	number_failed_attempts += 1 
-
 	verify_win_or_loss()
 
 
 func verify_win_or_loss() -> void:
-	if number_failed_attempts == (_fail_attempt_array.size() - 1):
+	if number_failed_attempts == 2:
 		# If the player has reached 3 failed attempts
-			# The array has 3 images, therefore a size = 3
-			# But number_failed_attempts started at 0, so when number_failed_attempts = 2, 
+			# number_failed_attempts started at 0, so when number_failed_attempts = 2, 
 			# the player has already failed a total of 3 times, so they lose!
 		# GAME OVER - PLAYER WINS
-		Util.player_has_won = true
+		Util.player_has_won = false
 		Util.player_score = score
 		get_tree().change_scene_to_file(Util.END_SCENE)
 		
@@ -91,7 +92,7 @@ func verify_win_or_loss() -> void:
 			# Because each time an image is selected, it is removed, when the arrays are empty
 			# It means that the player has gone through all images available
 		# GAME OVER - PLAYER LOSES
-		Util.player_has_won = false
+		Util.player_has_won = true
 		Util.player_score = score
 		get_tree().change_scene_to_file(Util.END_SCENE)
 	

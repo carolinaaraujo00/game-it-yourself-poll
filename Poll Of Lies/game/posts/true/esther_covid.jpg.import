@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7xgonyqq1ekk"
-path="res://.godot/imported/stanley.png-935d20528177546171c488e21b0c58f2.ctex"
+uid="uid://7n2mrw7aywtx"
+path="res://.godot/imported/esther_covid.jpg-958fee9861e737dec0b056a266fe8c39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/posts/true/stanley.png"
-dest_files=["res://.godot/imported/stanley.png-935d20528177546171c488e21b0c58f2.ctex"]
+source_file="res://game/posts/true/esther_covid.jpg"
+dest_files=["res://.godot/imported/esther_covid.jpg-958fee9861e737dec0b056a266fe8c39.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c74m0ulslxhub"
-path="res://.godot/imported/me_2.jpg-673d96635527cc4c965893057546ab65.ctex"
+uid="uid://c4ywbh7g11qt1"
+path="res://.godot/imported/who_aneamia.jpg-895e014601cc8ff414e658b7f43265b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/posts/true/me_2.jpg"
-dest_files=["res://.godot/imported/me_2.jpg-673d96635527cc4c965893057546ab65.ctex"]
+source_file="res://game/posts/true/who_aneamia.jpg"
+dest_files=["res://.godot/imported/who_aneamia.jpg-895e014601cc8ff414e658b7f43265b2.ctex"]
 
 [params]
 

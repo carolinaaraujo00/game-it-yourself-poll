@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv0lmqegtykre"
-path="res://.godot/imported/me.jpg-dcefc0971706833f31f5b5590661856c.ctex"
+uid="uid://b813dd268055p"
+path="res://.godot/imported/who_30_billion.jpg-30c97217e6cdfed254cdbb27935b0abe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/posts/fake/me.jpg"
-dest_files=["res://.godot/imported/me.jpg-dcefc0971706833f31f5b5590661856c.ctex"]
+source_file="res://game/posts/true/who_30_billion.jpg"
+dest_files=["res://.godot/imported/who_30_billion.jpg-30c97217e6cdfed254cdbb27935b0abe.ctex"]
 
 [params]
 
