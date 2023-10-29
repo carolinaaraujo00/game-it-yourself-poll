@@ -68,6 +68,7 @@ func _load_array_with_image_paths(array : Array, path : String) -> void:
 		
 		# While there are still files in said folder
 		while filename != "":
+			filename = filename.replace('.import', '')
 			# If they are images, load them onto the array
 			if filename.ends_with(".png") or filename.ends_with(".jpg"):
 				array.push_back(load(path + filename))
