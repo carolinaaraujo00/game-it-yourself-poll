@@ -1,7 +1,8 @@
-[gd_scene load_steps=88 format=3 uid="uid://bsk12qw6h6qxn"]
+[gd_scene load_steps=89 format=3 uid="uid://bsk12qw6h6qxn"]
 
 [ext_resource type="Script" path="res://main_menu/Menu.gd" id="1_ws5nv"]
 [ext_resource type="Theme" uid="uid://b2g8ex2eim5as" path="res://util/game_theme.tres" id="2_gfi3c"]
+[ext_resource type="Texture2D" uid="uid://bfuqu01443rur" path="res://main_menu/sprites/poll_of_lies_logo.png" id="3_7gn84"]
 [ext_resource type="Texture2D" uid="uid://dgt1v8c2j4w1u" path="res://main_menu/sprites/blue_witch/B_witch_attack.png" id="3_wfh5h"]
 [ext_resource type="Texture2D" uid="uid://c735dj1vw731n" path="res://main_menu/sprites/blue_witch/B_witch_charge.png" id="4_wkigy"]
 [ext_resource type="Texture2D" uid="uid://b1i86i2ko27eu" path="res://main_menu/sprites/blue_witch/B_witch_idle.png" id="5_vibd5"]
@@ -572,26 +573,26 @@ length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TinyWitch:position")
+tracks/0/path = NodePath("TinyWitch:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0.5, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-56, 224), Vector2(360, 224)]
+"values": [&"running", &"idle"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TinyWitch:animation")
+tracks/1/path = NodePath("TinyWitch:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0.5, 2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"running", &"idle"]
+"update": 0,
+"values": [Vector2(-56, 224), Vector2(360, 224)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -602,7 +603,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0.5, 2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [&"default", &"smoke"]
 }
 
@@ -621,6 +622,41 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_otq56")
+
+[node name="Logo" type="Sprite2D" parent="Panel"]
+position = Vector2(160, 224)
+scale = Vector2(0.481896, 0.481896)
+texture = ExtResource("3_7gn84")
+
+[node name="TinyWitch" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(360, 224)
+scale = Vector2(5.1875, 5.1875)
+sprite_frames = SubResource("SpriteFrames_kltmq")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Panel" type="Panel" parent="Panel/TinyWitch"]
+offset_left = 10.7952
+offset_top = -37.0121
+offset_right = 50.7952
+offset_bottom = 2.98795
+scale = Vector2(1.99525, 1.99525)
+theme_override_styles/panel = SubResource("StyleBoxFlat_otq56")
+
+[node name="BubblingCaldron" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(512, 216)
+scale = Vector2(4.4375, 4.4375)
+sprite_frames = SubResource("SpriteFrames_4upol")
+animation = &"smoke"
+autoplay = "default"
+
+[node name="Spider" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(962, 68)
+scale = Vector2(4.2, 4.2)
+sprite_frames = SubResource("SpriteFrames_nm08b")
+animation = &"up_and_down"
+autoplay = "up_and_down"
+frame_progress = 0.39236
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 visible = false
@@ -653,28 +689,6 @@ text = "CREDITS"
 layout_mode = 2
 size_flags_vertical = 3
 text = "QUIT"
-
-[node name="TinyWitch" type="AnimatedSprite2D" parent="Panel"]
-position = Vector2(360, 224)
-scale = Vector2(5.1875, 5.1875)
-sprite_frames = SubResource("SpriteFrames_kltmq")
-animation = &"idle"
-autoplay = "idle"
-
-[node name="BubblingCaldron" type="AnimatedSprite2D" parent="Panel"]
-position = Vector2(512, 216)
-scale = Vector2(4.4375, 4.4375)
-sprite_frames = SubResource("SpriteFrames_4upol")
-animation = &"smoke"
-autoplay = "default"
-
-[node name="Spider" type="AnimatedSprite2D" parent="Panel"]
-position = Vector2(962, 68)
-scale = Vector2(4.2, 4.2)
-sprite_frames = SubResource("SpriteFrames_nm08b")
-animation = &"up_and_down"
-autoplay = "up_and_down"
-frame_progress = 0.39236
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Panel"]
 libraries = {
