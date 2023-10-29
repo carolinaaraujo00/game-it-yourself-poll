@@ -26,10 +26,8 @@ const ANIM_FAIL_ARRAY = [
 	"second_fail_appear",
 	"third_fail_appear"
 ]
-#const ANIM_LEFT_START_HOVERING = "left_post_start_hovering"
-#const ANIM_LEFT_STOP_HOVERING = "left_post_stop_hovering"
-#const ANIM_RIGHT_START_HOVERING = "right_post_start_hovering"
-#const ANIM_RIGHT_STOP_HOVERING = "left_post_stop_hovering"
+const ANIM_WITCH_IDLE = "idle"
+const ANIM_CALDRON_SMOKE = "smoke"
 
 # IMAGE PATHS
 const FAKE_POST_PATH = "res://game/posts/fake/"
