@@ -10,7 +10,7 @@ extends Node
 var _audio_stream_players : Array = []
 var _next : int = 0
 
-
+# https://www.youtube.com/watch?v=bdsHf08QmZ4&t=342s
 func _ready():
 	
 	# At the start, check to see if the SoundQueue has any audio to play
