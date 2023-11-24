@@ -9,3 +9,4 @@ func _ready():
 # When the player presses the go back to menu button, change scene to menu
 func _on_btn_back_to_menu_pressed():
 	get_tree().change_scene_to_file(Util.MENU_SCENE)
+

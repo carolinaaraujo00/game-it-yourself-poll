@@ -37,3 +37,16 @@ func play_sound():
 		_audio_stream_players[_next + 1].play()
 		_next %= _audio_stream_players.size()
 		
+		
+func _get_configuration_warnings():
+	# At the start, check to see if the SoundQueue has any audio to play
+	# if not, it warns the programmer
+	if get_child_count() == 0:
+		print("[Warning] No children found. Expected one AudioStreamPlayer child")
+		return;
+	#function returns a Node object, not a type. If you want to check if the child node at index 0 is an instance of AudioStreamPlayer, you should use the is_instance method instead.
+	if !get_child(0).is_class("AudioStreamPlayer"):
+		print("[Warning] Expected first child to be an AudioStreamPlayer.")
+		return;
+	return _get_configuration_warnings()
+		

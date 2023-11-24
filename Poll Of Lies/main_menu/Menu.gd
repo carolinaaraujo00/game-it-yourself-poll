@@ -4,7 +4,6 @@ extends Node
 @onready var button_container : VBoxContainer = $Panel/VBoxContainer
 @onready var witch : AnimatedSprite2D = $Panel/TinyWitch
 @onready var caldron : AnimatedSprite2D = $Panel/BubblingCaldron
-@onready var music_player : Node = $SoundPlayer
 
 
 func _ready() -> void: 
@@ -12,7 +11,6 @@ func _ready() -> void:
 	assert(DialogueManager.dialogue_ended.connect(_on_dialogue_end) == OK)
 	
 	# When menu opens, starting playing the background music
-#	music_player.play_sound()
 	SoundManager.instance.play_menu_music()
 	
 	# If the player has never been in the main menu, play animation

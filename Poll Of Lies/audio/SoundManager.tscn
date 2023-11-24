@@ -9,5 +9,5 @@ script = ExtResource("1_fio71")
 
 [node name="MenuMusic" parent="." instance=ExtResource("2_1x7gl")]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MenuMusic"]
+[node name="MenuMusic" type="AudioStreamPlayer" parent="MenuMusic"]
 stream = ExtResource("3_vhtt4")
