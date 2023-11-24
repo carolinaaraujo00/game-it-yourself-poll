@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://bsk12qw6h6qxn"]
+[gd_scene load_steps=91 format=3 uid="uid://bsk12qw6h6qxn"]
 
 [ext_resource type="Script" path="res://main_menu/Menu.gd" id="1_ws5nv"]
 [ext_resource type="Theme" uid="uid://b2g8ex2eim5as" path="res://util/game_theme.tres" id="2_gfi3c"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://ds3tg6yfxlhrs" path="res://main_menu/sprites/blue_witch/B_witch_take_damage.png" id="7_2d0lk"]
 [ext_resource type="Texture2D" uid="uid://dq2jl0mp36nmp" path="res://main_menu/sprites/cauldron/cauldron.png" id="8_ybefq"]
 [ext_resource type="Texture2D" uid="uid://ckan14da3cdly" path="res://main_menu/sprites/spider/spidy.png" id="9_gpdyu"]
+[ext_resource type="PackedScene" uid="uid://dabiljwcaod1b" path="res://audio/SoundPlayer.tscn" id="11_xiivg"]
+[ext_resource type="AudioStream" uid="uid://cya454r2anf6v" path="res://audio/audio_files/589144__yogoorth__witchs-laugh.wav" id="12_qg4hf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otq56"]
 bg_color = Color(0.172549, 0.352941, 0.278431, 1)
@@ -694,6 +696,11 @@ text = "QUIT"
 libraries = {
 "": SubResource("AnimationLibrary_awsbg")
 }
+
+[node name="SoundPlayer" parent="." instance=ExtResource("11_xiivg")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundPlayer"]
+stream = ExtResource("12_qg4hf")
 
 [connection signal="pressed" from="Panel/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Credits" to="." method="_on_credits_pressed"]

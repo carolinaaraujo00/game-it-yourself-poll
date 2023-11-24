@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://vxu66o3revl5"
+path="res://.godot/imported/Puzzle Game 2.mp3-a02597daedd2b8bb385ac7c06c5b4dc5.mp3str"
+
+[deps]
+
+source_file="res://audio/audio_files/MUSIC/Puzzle Game 2.mp3"
+dest_files=["res://.godot/imported/Puzzle Game 2.mp3-a02597daedd2b8bb385ac7c06c5b4dc5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

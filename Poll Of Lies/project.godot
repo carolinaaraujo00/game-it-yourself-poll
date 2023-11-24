@@ -19,6 +19,7 @@ config/icon="res://main_menu/sprites/icon.png"
 
 Util="*res://util/Util.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+SoundManager="*res://audio/SoundManager.tscn"
 
 [display]
 

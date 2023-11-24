@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwilrs6jlc0r8"]
+
+[ext_resource type="Script" path="res://audio/SoundManager.gd" id="1_fio71"]
+[ext_resource type="PackedScene" uid="uid://dabiljwcaod1b" path="res://audio/SoundPlayer.tscn" id="2_1x7gl"]
+[ext_resource type="AudioStream" uid="uid://dgm5ra08yrtvo" path="res://audio/audio_files/MUSIC/puzzlemenu.ogg" id="3_vhtt4"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_fio71")
+
+[node name="MenuMusic" parent="." instance=ExtResource("2_1x7gl")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MenuMusic"]
+stream = ExtResource("3_vhtt4")
