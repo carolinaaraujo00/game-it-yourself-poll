@@ -38,17 +38,27 @@ func _ready() -> void:
 #
 # When the player clicks the quit button, exit the game
 func _on_quit_pressed() -> void:
+	# Audio from click sound plays
+	SoundManager.instance.play_click_sfx()
+	
 	get_tree().quit()
 
 
 # When player clicks the credits button, go to the credits scene
 func _on_credits_pressed():
+	# Audio from click sound plays
+	SoundManager.instance.play_click_sfx()
+	
 	get_tree().change_scene_to_file(Util.CREDITS_SCENE)
 
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file(Util.GAME_SCENE)
+	# Audio from click sound plays
+	SoundManager.instance.play_click_sfx()
+	# On starting game, stops all the audio from this scene
 	SoundManager.instance.stop_menu_audio()
+	
+	get_tree().change_scene_to_file(Util.GAME_SCENE)
 
 
 func _anim_finished(animation_name):

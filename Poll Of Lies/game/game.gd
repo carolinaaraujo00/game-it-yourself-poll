@@ -61,6 +61,9 @@ func assign_random_images_to_posts() -> void:
 
 
 func update_score() -> void:
+	# Play sound associated with correct answer
+	SoundManager.instance.play_correct_sfx()
+	
 	# If the player answered correctly, increase the score by one point
 	score += 1
 	
@@ -72,6 +75,9 @@ func update_score() -> void:
 
 
 func update_fail_attempts() -> void:
+	# Play sound associated with choosing the wrong answer
+	SoundManager.instance.play_error_sfx()
+	
 	# Make the red balls visible, to show the player if they have 1, 2 or 3 failed attempts
 	_animation_player.play(Util.ANIM_FAIL_ARRAY[number_failed_attempts])
 	await _animation_player.animation_finished
