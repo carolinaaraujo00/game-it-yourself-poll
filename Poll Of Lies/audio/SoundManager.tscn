@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwilrs6jlc0r8"]
+[gd_scene load_steps=11 format=3 uid="uid://dwilrs6jlc0r8"]
 
 [ext_resource type="Script" path="res://audio/SoundManager.gd" id="1_fio71"]
-[ext_resource type="PackedScene" uid="uid://cpvtigfesrvdt" path="res://audio/SoundPlayer.tscn" id="2_1x7gl"]
 [ext_resource type="AudioStream" uid="uid://dgm5ra08yrtvo" path="res://audio/audio_files/MUSIC/puzzlemenu.ogg" id="3_vhtt4"]
 [ext_resource type="AudioStream" uid="uid://5i4vdwwg48ks" path="res://audio/audio_files/UI/click.wav" id="4_ab573"]
 [ext_resource type="AudioStream" uid="uid://du2l74ausv5np" path="res://audio/audio_files/witch-cackle.ogg" id="4_xwtj5"]
@@ -15,15 +14,13 @@
 [node name="SoundManager" type="Node"]
 script = ExtResource("1_fio71")
 
-[node name="MenuMusic" parent="." instance=ExtResource("2_1x7gl")]
-script = null
+[node name="MenuMusic" type="Node" parent="."]
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="MenuMusic"]
 stream = ExtResource("3_vhtt4")
 bus = &"Music"
 
-[node name="UIAudio" parent="." instance=ExtResource("2_1x7gl")]
-script = null
+[node name="UIAudio" type="Node" parent="."]
 
 [node name="Click" type="AudioStreamPlayer" parent="UIAudio"]
 stream = ExtResource("4_ab573")
@@ -38,8 +35,7 @@ bus = &"Sounds"
 stream = ExtResource("6_ep0ux")
 bus = &"Sounds"
 
-[node name="MainMenuAudio" parent="." instance=ExtResource("2_1x7gl")]
-script = null
+[node name="MainMenuAudio" type="Node" parent="."]
 
 [node name="WitchLaugh" type="AudioStreamPlayer" parent="MainMenuAudio"]
 stream = ExtResource("4_xwtj5")
@@ -53,15 +49,13 @@ bus = &"Sounds"
 stream = ExtResource("9_qx2vb")
 bus = &"Sounds"
 
-[node name="GameMusic" parent="." instance=ExtResource("2_1x7gl")]
-script = null
+[node name="GameMusic" type="Node" parent="."]
 
 [node name="GameMusic" type="AudioStreamPlayer" parent="GameMusic"]
 stream = ExtResource("7_aaj62")
 bus = &"Music"
 
-[node name="GameEnd" parent="." instance=ExtResource("2_1x7gl")]
-script = null
+[node name="GameEnd" type="Node" parent="."]
 
 [node name="EndMusic" type="AudioStreamPlayer" parent="GameEnd"]
 stream = ExtResource("11_iwx88")
