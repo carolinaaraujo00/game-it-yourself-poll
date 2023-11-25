@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c1r05l1ix5dk0" path="res://game/sprites/sprite_fail_attempt.png" id="3_rh4cq"]
 [ext_resource type="Script" path="res://game/posts/Post.gd" id="3_ttax2"]
 
-[sub_resource type="GDScript" id="GDScript_nu4b1"]
+[sub_resource type="GDScript" id="GDScript_1olam"]
 script/source = "extends Node
 
 @onready var _animation_player = $AnimationPlayer
@@ -68,6 +68,9 @@ func assign_random_images_to_posts() -> void:
 
 
 func update_score() -> void:
+	# Play sound associated with correct answer
+	SoundManager.instance.play_correct_sfx()
+	
 	# If the player answered correctly, increase the score by one point
 	score += 1
 	
@@ -79,6 +82,9 @@ func update_score() -> void:
 
 
 func update_fail_attempts() -> void:
+	# Play sound associated with choosing the wrong answer
+	SoundManager.instance.play_error_sfx()
+	
 	# Make the red balls visible, to show the player if they have 1, 2 or 3 failed attempts
 	_animation_player.play(Util.ANIM_FAIL_ARRAY[number_failed_attempts])
 	await _animation_player.animation_finished
@@ -250,7 +256,7 @@ _data = {
 }
 
 [node name="game" type="Node"]
-script = SubResource("GDScript_nu4b1")
+script = SubResource("GDScript_1olam")
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
