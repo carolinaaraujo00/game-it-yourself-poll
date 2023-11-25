@@ -1,12 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwilrs6jlc0r8"]
+[gd_scene load_steps=12 format=3 uid="uid://dwilrs6jlc0r8"]
 
 [ext_resource type="Script" path="res://audio/SoundManager.gd" id="1_fio71"]
 [ext_resource type="PackedScene" uid="uid://dabiljwcaod1b" path="res://audio/SoundPlayer.tscn" id="2_1x7gl"]
 [ext_resource type="AudioStream" uid="uid://dgm5ra08yrtvo" path="res://audio/audio_files/MUSIC/puzzlemenu.ogg" id="3_vhtt4"]
+[ext_resource type="AudioStream" uid="uid://5i4vdwwg48ks" path="res://audio/audio_files/UI/click-click-stereo.wav" id="4_vlype"]
 [ext_resource type="AudioStream" uid="uid://du2l74ausv5np" path="res://audio/audio_files/witch-cackle.ogg" id="4_xwtj5"]
 [ext_resource type="AudioStream" uid="uid://bu5ruiulohdno" path="res://audio/audio_files/fire-3-d.ogg" id="5_1epkb"]
+[ext_resource type="AudioStream" uid="uid://m6ms1usdwubt" path="res://audio/audio_files/UI/sd_0.wav" id="5_vldhv"]
 [ext_resource type="AudioStream" uid="uid://drfmn3xkxa84h" path="res://audio/audio_files/bubbles_low_5.wav" id="6_7fipa"]
-[ext_resource type="AudioStream" uid="uid://cs4yaf6md3fbr" path="res://audio/audio_files/MUSIC/Game Music.mp3" id="7_52s1t"]
+[ext_resource type="AudioStream" uid="uid://d2ba6cc3hf27y" path="res://audio/audio_files/UI/error.ogg" id="6_ep0ux"]
+[ext_resource type="AudioStream" uid="uid://b8dgcvemvpjjb" path="res://audio/audio_files/MUSIC/Game Music.ogg" id="7_aaj62"]
+[ext_resource type="AudioStream" uid="uid://btuu7qorpg3jr" path="res://audio/audio_files/MUSIC/Victory.ogg" id="11_iwx88"]
 
 [node name="SoundManager" type="Node"]
 script = ExtResource("1_fio71")
@@ -15,6 +19,21 @@ script = ExtResource("1_fio71")
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="MenuMusic"]
 stream = ExtResource("3_vhtt4")
+bus = &"Music"
+
+[node name="UIAudio" parent="." instance=ExtResource("2_1x7gl")]
+
+[node name="Click" type="AudioStreamPlayer" parent="UIAudio"]
+stream = ExtResource("4_vlype")
+volume_db = 3.748
+bus = &"Sounds"
+
+[node name="Correct" type="AudioStreamPlayer" parent="UIAudio"]
+stream = ExtResource("5_vldhv")
+bus = &"Music"
+
+[node name="Error" type="AudioStreamPlayer" parent="UIAudio"]
+stream = ExtResource("6_ep0ux")
 bus = &"Music"
 
 [node name="MainMenuAudio" parent="." instance=ExtResource("2_1x7gl")]
@@ -34,5 +53,11 @@ bus = &"Sounds"
 [node name="GameMusic" parent="." instance=ExtResource("2_1x7gl")]
 
 [node name="GameMusic" type="AudioStreamPlayer" parent="GameMusic"]
-stream = ExtResource("7_52s1t")
+stream = ExtResource("7_aaj62")
+bus = &"Music"
+
+[node name="GameEnd" parent="." instance=ExtResource("2_1x7gl")]
+
+[node name="EndMusic" type="AudioStreamPlayer" parent="GameEnd"]
+stream = ExtResource("11_iwx88")
 bus = &"Music"

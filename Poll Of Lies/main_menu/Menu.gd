@@ -48,6 +48,7 @@ func _on_credits_pressed():
 
 func _on_start_pressed():
 	get_tree().change_scene_to_file(Util.GAME_SCENE)
+	SoundManager.instance.stop_menu_audio()
 
 
 func _anim_finished(animation_name):
