@@ -11,7 +11,15 @@ func _ready() -> void:
 	assert(DialogueManager.dialogue_ended.connect(_on_dialogue_end) == OK)
 	
 	# When menu opens, starting playing the background music
+	# SoundManager is the class that controls all the audio in the game
+	# This class is pre loaded by the project and always ready to play the 
+	# requested sound
+	# As long as that sound exists and is ready to be played in the scene
 	SoundManager.instance.play_menu_music()
+	SoundManager.instance.play_witch_laugh_sfx()
+	SoundManager.instance.play_fire_sfx()
+	SoundManager.instance.play_bubbles_sfx()
+	
 	
 	# If the player has never been in the main menu, play animation
 	if !Util.player_has_visited_menu:

@@ -45,7 +45,6 @@ var player_has_visited_menu : bool = false
 var player_has_won : bool = false
 var player_score : int = 0
 
-
 func _init() -> void:
 	# Get all the images from the fake post folder onto the fake post array
 	_load_array_with_image_paths(FAKE_POST_ARRAY, FAKE_POST_PATH)
