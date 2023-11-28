@@ -30,10 +30,6 @@ func _ready():
 	
 	# When the game starts, the game music starts
 	SoundManager.instance.play_game_music()
-	
-	# Assign each their own animation for hovering
-#	_left_post.assign_animation(Util.ANIM_LEFT_START_HOVERING, Util.ANIM_LEFT_STOP_HOVERING)
-#	_right_post.assign_animation(Util.ANIM_RIGHT_START_HOVERING, Util.ANIM_RIGHT_STOP_HOVERING)
 
 
 func assign_random_images_to_posts() -> void:
@@ -71,7 +67,6 @@ func update_score() -> void:
 	_score_label.text = Util.STR_SCORE + str(score)
 	
 	verify_win_or_loss()
-
 
 
 func update_fail_attempts() -> void:
