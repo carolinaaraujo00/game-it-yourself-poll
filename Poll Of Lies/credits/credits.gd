@@ -8,4 +8,8 @@ func _ready():
 
 # When the player presses the go back to menu button, change scene to menu
 func _on_btn_back_to_menu_pressed():
+	# Audio from click sound plays
+	SoundManager.instance.play_click_sfx()
+	
 	get_tree().change_scene_to_file(Util.MENU_SCENE)
+

@@ -29,6 +29,9 @@ func assign_animation(anim_start : String, anim_stop : String) -> void:
 func _input(event) -> void:
 	# If player clicks on the correct answer
 	if (event is InputEventMouseButton && event.is_action_released("mouse_click") && _mouse_hovering):
+		# Play click audio
+		SoundManager.instance.play_click_sfx()
+		
 		# If the post is correct, emit a signal to increase the score
 		if _is_post_true:
 			scored_point.emit()
