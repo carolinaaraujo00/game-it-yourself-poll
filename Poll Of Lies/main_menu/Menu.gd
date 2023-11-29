@@ -46,7 +46,6 @@ func _on_credits_pressed():
 
 func _on_start_pressed():
 	SoundManager.instance.play_click_sfx()
-	SoundManager.instance.stop_menu_audio()
 	
 	get_tree().change_scene_to_file(Util.GAME_SCENE)
 

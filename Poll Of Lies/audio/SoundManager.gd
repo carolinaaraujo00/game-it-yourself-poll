@@ -60,7 +60,7 @@ func play_audio(audio_name):
 
 
 # Stop all menu music
-func stop_menu_audio():
+func stop_all_audio():
 	for i in Array(_sound_player_by_name.keys()):
 		_sound_player_by_name.get(i).stop()
 
@@ -69,9 +69,6 @@ func play_win_sound():
 
 func play_loss_sound():
 	_sound_player_by_name[LOSS_SOUND].play()
-
-func stop_game_music():
-	_sound_player_by_name[GAME_MUSIC].stop()
 
 func play_game_music():
 	play_audio(GAME_MUSIC)

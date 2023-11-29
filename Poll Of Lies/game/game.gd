@@ -15,6 +15,9 @@ var number_failed_attempts : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Stop music from menu
+	SoundManager.instance.stop_all_audio()
+	
 	reset_variables() 
 	
 	# Connect to signals of when player selects the correct post
@@ -54,7 +57,6 @@ func assign_random_images_to_posts() -> void:
 	else:
 		_left_post.assign_image(Util.TRUE_POST_ARRAY.pop_at(randi() % Util.TRUE_POST_ARRAY.size()), true)
 		_right_post.assign_image(Util.FAKE_POST_ARRAY.pop_at(randi() % Util.FAKE_POST_ARRAY.size()), false)
-
 
 func update_score() -> void:
 	# Play sound associated with correct answer

@@ -63,7 +63,7 @@ func _init() -> void:
 
 
 func _load_array_with_image_paths(array : Array, path : String) -> void:
-	var check_if_filename_already_exists_in_array = []
+	var filenames_added_to_array = []
 	
 	# Go through all the files in a folder
 	var dir = DirAccess.open(path)
@@ -75,9 +75,9 @@ func _load_array_with_image_paths(array : Array, path : String) -> void:
 		while filename != "":
 			filename = filename.replace('.import', '')
 			# If they are images, load them onto the array
-			if filename.ends_with(".png") or filename.ends_with(".jpg"):
-				if !check_if_filename_already_exists_in_array.has(filename):
-					check_if_filename_already_exists_in_array.push_back(filename)
+			if (!filenames_added_to_array.has(filename)
+				and (filename.ends_with(".png") or filename.ends_with(".jpg"))):
+					filenames_added_to_array.push_back(filename)
 					
 					array.push_back(load(path + filename))
 			

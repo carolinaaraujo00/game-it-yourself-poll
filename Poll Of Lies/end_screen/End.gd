@@ -5,7 +5,7 @@ extends Node
 @onready var score_label = $Panel/VBoxContainer2/ScoreLabel
 
 func _ready():
-	SoundManager.instance.stop_game_music()
+	SoundManager.instance.stop_all_audio()
 	
 	if Util.player_has_won: 
 		SoundManager.instance.play_win_sound()
@@ -20,5 +20,5 @@ func _ready():
 
 
 func _on_btn_back_to_menu_pressed():
-	SoundManager.instance.stop_menu_audio()
+	SoundManager.instance.stop_all_audio()
 	get_tree().change_scene_to_file(Util.MENU_SCENE)

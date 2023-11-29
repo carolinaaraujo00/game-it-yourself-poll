@@ -1,0 +1,257 @@
+[gd_scene load_steps=10 format=3 uid="uid://lht5h65k8eij"]
+
+[ext_resource type="Script" path="res://game/game.gd" id="1_cyo7l"]
+[ext_resource type="Theme" uid="uid://b2g8ex2eim5as" path="res://util/game_theme.tres" id="2_id01g"]
+[ext_resource type="Texture2D" uid="uid://c1r05l1ix5dk0" path="res://game/sprites/sprite_fail_attempt.png" id="3_rh4cq"]
+[ext_resource type="Script" path="res://game/posts/Post.gd" id="3_ttax2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqyrp"]
+bg_color = Color(0.309804, 0.643137, 0.647059, 0.662745)
+
+[sub_resource type="Animation" id="Animation_pswn4"]
+resource_name = "first_fail_appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail3/Fail3:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 3.36358),
+"update": 0,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail3/Fail3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(0.420448, 0.420448, 0.420448, 0.420448, 0.420448, 0.420448),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_86aps"]
+resource_name = "second_fail_appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail2/Fail2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail2/Fail2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(0.42, 0.42, 0.42, 0.42, 0.42, 0.42),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail3/Fail3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_o0ot2"]
+resource_name = "third_fail_appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail1/Fail1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail1/Fail1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(0.42, 0.42, 0.42, 0.42, 0.42, 0.42),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail2/Fail2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail3/Fail3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pq3wy"]
+_data = {
+"first_fail_appear": SubResource("Animation_pswn4"),
+"second_fail_appear": SubResource("Animation_86aps"),
+"third_fail_appear": SubResource("Animation_o0ot2")
+}
+
+[node name="game" type="Node"]
+script = ExtResource("1_cyo7l")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xqyrp")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="Goal" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_id01g")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "WHICH ONE IS TRUE?"
+horizontal_alignment = 1
+
+[node name="HBoxContainerScore" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainerScore"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 15
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_id01g")
+theme_override_font_sizes/font_size = 16
+text = "SCORE: "
+
+[node name="MarginContainerFail1" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainerScore"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+
+[node name="Fail1" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail1"]
+visible = false
+layout_direction = 3
+layout_mode = 2
+texture = ExtResource("3_rh4cq")
+
+[node name="MarginContainerFail2" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainerScore"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+
+[node name="Fail2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail2"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_direction = 3
+layout_mode = 2
+texture = ExtResource("3_rh4cq")
+
+[node name="MarginContainerFail3" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainerScore"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 30
+
+[node name="Fail3" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail3"]
+visible = false
+layout_direction = 3
+layout_mode = 2
+texture = ExtResource("3_rh4cq")
+
+[node name="HBoxContainerPosts" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeftMarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainerPosts"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainerPosts/LeftMarginContainer"]
+layout_mode = 2
+
+[node name="LeftPost" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainerPosts/LeftMarginContainer"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("3_ttax2")
+
+[node name="RightMarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainerPosts"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainerPosts/RightMarginContainer"]
+layout_mode = 2
+
+[node name="RightPost" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainerPosts/RightMarginContainer"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("3_ttax2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pq3wy")
+}
