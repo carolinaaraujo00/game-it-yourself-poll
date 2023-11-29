@@ -52,10 +52,11 @@ func play_audio(audio_name):
 	# Check if the passed audio exists in the dictionaries
 	var audio_node = _sound_player_by_name.get(audio_name)
 	
-	if _sound_player_by_name.get(audio_name) != null:
-		# If audio_node exists and is not playing already, play audio
-		if !audio_node.is_playing():
-			audio_node.play()
+	# If audio_node exists and is not playing already, play audio
+	if _sound_player_by_name.get(audio_name) != null and audio_node.is_playing():
+		# If it is playing, stop it and play it again 
+		audio_node.stop()
+	audio_node.play()
 
 
 # Stop all menu music
