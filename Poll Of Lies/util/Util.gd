@@ -46,6 +46,12 @@ var player_has_won : bool = false
 var player_score : int = 0
 
 func _init() -> void:
+	FAKE_POST_ARRAY = []
+	TRUE_POST_ARRAY = []
+	
+	FAKE_POST_ARRAY_COPY = []
+	TRUE_POST_ARRAY_COPY = []
+	
 	# Get all the images from the fake post folder onto the fake post array
 	_load_array_with_image_paths(FAKE_POST_ARRAY, FAKE_POST_PATH)
 	
@@ -57,6 +63,8 @@ func _init() -> void:
 
 
 func _load_array_with_image_paths(array : Array, path : String) -> void:
+	var check_if_filename_already_exists_in_array = []
+	
 	# Go through all the files in a folder
 	var dir = DirAccess.open(path)
 	if dir:
@@ -68,7 +76,10 @@ func _load_array_with_image_paths(array : Array, path : String) -> void:
 			filename = filename.replace('.import', '')
 			# If they are images, load them onto the array
 			if filename.ends_with(".png") or filename.ends_with(".jpg"):
-				array.push_back(load(path + filename))
+				if !check_if_filename_already_exists_in_array.has(filename):
+					check_if_filename_already_exists_in_array.push_back(filename)
+					
+					array.push_back(load(path + filename))
 			
 			# Get next file in folder
 			filename = dir.get_next()
