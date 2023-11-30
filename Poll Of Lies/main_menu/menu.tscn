@@ -579,7 +579,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0.5, 2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
+"update": 1,
 "values": [&"running", &"idle"]
 }
 tracks/1/type = "value"
@@ -603,7 +603,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0.5, 2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
+"update": 1,
 "values": [&"default", &"smoke"]
 }
 
@@ -694,7 +694,3 @@ text = "QUIT"
 libraries = {
 "": SubResource("AnimationLibrary_awsbg")
 }
-
-[connection signal="pressed" from="Panel/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

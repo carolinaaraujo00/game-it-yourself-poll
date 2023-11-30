@@ -26,30 +26,6 @@ func _ready() -> void:
 		button_container.visible = true
 
 
-# The following functions are connected via Godot's interface to be called upon 
-# a certain action, for example: when the player clicks the start button.
-# Therefore, each function is specific to one action, dealing with it accordingly. 
-#
-# When the player clicks the quit button, exit the game
-func _on_quit_pressed() -> void:
-	SoundManager.instance.play_click_sfx()
-	
-	get_tree().quit()
-
-
-# When player clicks the credits button, go to the credits scene
-func _on_credits_pressed():
-	SoundManager.instance.play_click_sfx()
-	
-	get_tree().change_scene_to_file(Util.CREDITS_SCENE)
-
-
-func _on_start_pressed():
-	SoundManager.instance.play_click_sfx()
-	
-	get_tree().change_scene_to_file(Util.GAME_SCENE)
-
-
 func _anim_finished(animation_name):
 	# If the introduction animation finished
 	if animation_name == Util.ANIM_GAME_INTRODUCTION:

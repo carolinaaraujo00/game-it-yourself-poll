@@ -13,10 +13,11 @@ extends Node
 var score : int = 0
 var number_failed_attempts : int = 0
 
-# Called when the node enters the scene tree for the first time.
+# Called when this scene starts 
 func _ready():
-	# Stop music from menu
+	# Stop music from menu and start game music
 	SoundManager.instance.stop_all_audio()
+	SoundManager.instance.play_game_music()
 	
 	reset_variables() 
 	
@@ -28,45 +29,45 @@ func _ready():
 	assert(_left_post.failed_attempt.connect(update_fail_attempts) == OK)
 	assert(_right_post.failed_attempt.connect(update_fail_attempts) == OK)
 	
+	# Show score to the player 
 	_score_label.text = Util.STR_SCORE + str(score)
-	assign_random_images_to_posts()
 	
-	# When the game starts, the game music starts
-	SoundManager.instance.play_game_music()
+	# Put images on the right and left post
+	assign_random_images_to_posts()
 
 
 func assign_random_images_to_posts() -> void:
-	# 50-50% random chance of the posts being true or false, so it doesn't get predictable
+	# 50-50% random chance for the posts to either be true or false, so it doesn't get predictable
 	# Remember that when one is true, the other has to be false!
-	
-	# Create a random number between 0 and 1
-	var chance_true_or_fake = randf()
-	
-	# If the number was bigger than 0.5, the left post will be false and the right will be true
-	if (chance_true_or_fake > 0.5):
-		# Let's dissect this: 
-		# Each post has a function called assing_image, which we are calling and passing arguments to
-		# These arguments are: one image and a boolean (true or false) 
-		# To send the image we are simply generating a random index between 0 and the size of the array
-		# And with array.pop_at(index), the image at that index is returned and removed from the array
-		# So it won't appear again!
-		_left_post.assign_image(Util.FAKE_POST_ARRAY.pop_at(randi() % Util.FAKE_POST_ARRAY.size()), false)
-		_right_post.assign_image(Util.TRUE_POST_ARRAY.pop_at(randi() % Util.TRUE_POST_ARRAY.size()), true)
-	
-	# And vice-versa
-	else:
-		_left_post.assign_image(Util.TRUE_POST_ARRAY.pop_at(randi() % Util.TRUE_POST_ARRAY.size()), true)
-		_right_post.assign_image(Util.FAKE_POST_ARRAY.pop_at(randi() % Util.FAKE_POST_ARRAY.size()), false)
+	pass
+
+
+# These methods work as follows:
+# Since we don't know exactly how many items are inside the array, 
+# we can create a random number between 0 and the number of items in the array
+# which will correspond to a random item of the array. 
+# This is done like so: randi() % Util.FAKE_POST_ARRAY.size()
+# randi returns a VERY BIG number from 0 to 4294967295 (inclusive), 
+# but by dividing it (%) by the number of items in the array, we get a random index!
+# the pop_at() method for an array simultaneously returns and removes an item from the array
+# so after an image is chosen it can't be chosen again!
+# Passing the random index to the pop_at() method for the array does the trick.
+func get_random_fake_post():
+	return Util.FAKE_POST_ARRAY.pop_at(randi() % Util.FAKE_POST_ARRAY.size())
+
+func get_random_true_post():
+	return Util.TRUE_POST_ARRAY.pop_at(randi() % Util.TRUE_POST_ARRAY.size())
+
 
 func update_score() -> void:
 	# Play sound associated with correct answer
 	SoundManager.instance.play_correct_sfx()
 	
-	# If the player answered correctly, increase the score by one point
-	score += 1
-	
-	# Update the text to show this new, increased score
-	_score_label.text = Util.STR_SCORE + str(score)
+	## If the player answered correctly, increase the score by one point
+	#score += 1
+	#
+	## Update the text to show this new, increased score
+	#_score_label.text = Util.STR_SCORE + str(score)
 	
 	verify_win_or_loss()
 
