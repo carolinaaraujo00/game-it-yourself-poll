@@ -371,7 +371,7 @@ offset_bottom = 53.0
 grow_horizontal = 2
 theme = ExtResource("6_v53xc")
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="DevelopedBy_Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
@@ -380,7 +380,7 @@ text = "
 A GAME DEVELOPED BY"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="VBoxContainer"]
+[node name="Developers_Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
@@ -389,7 +389,7 @@ CAROLINA ARAÚJO
 FRANCISCO PINTO"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="VBoxContainer"]
+[node name="Context_Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25

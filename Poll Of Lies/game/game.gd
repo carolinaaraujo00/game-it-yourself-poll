@@ -1,14 +1,13 @@
 extends Node
 
+@onready var _fail_attempt_array = [
+	$MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail3/Fail3, 
+	$MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail2/Fail2, 
+	$MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail1/Fail1]
 @onready var _animation_player = $AnimationPlayer
 @onready var _left_post = $MarginContainer/VBoxContainer/HBoxContainerPosts/LeftMarginContainer/LeftPost
 @onready var _right_post = $MarginContainer/VBoxContainer/HBoxContainerPosts/RightMarginContainer/RightPost
 @onready var _score_label = $MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainer/ScoreLabel
-@onready var _fail_attempt_array = [
-	$MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail3/Fail3, 
-	$MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail2/Fail2, 
-	$MarginContainer/VBoxContainer/HBoxContainerScore/MarginContainerFail1/Fail1
-]
 
 var score : int = 0
 var number_failed_attempts : int = 0
@@ -62,12 +61,6 @@ func get_random_true_post():
 func update_score() -> void:
 	# Play sound associated with correct answer
 	SoundManager.instance.play_correct_sfx()
-	
-	## If the player answered correctly, increase the score by one point
-	#score += 1
-	#
-	## Update the text to show this new, increased score
-	#_score_label.text = Util.STR_SCORE + str(score)
 	
 	verify_win_or_loss()
 
