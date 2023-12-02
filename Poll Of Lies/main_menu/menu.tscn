@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://bsk12qw6h6qxn"]
+[gd_scene load_steps=90 format=3 uid="uid://bsk12qw6h6qxn"]
 
 [ext_resource type="Script" path="res://main_menu/Menu.gd" id="1_ws5nv"]
 [ext_resource type="Theme" uid="uid://b2g8ex2eim5as" path="res://util/game_theme.tres" id="2_gfi3c"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ds3tg6yfxlhrs" path="res://main_menu/sprites/blue_witch/B_witch_take_damage.png" id="7_2d0lk"]
 [ext_resource type="Texture2D" uid="uid://dq2jl0mp36nmp" path="res://main_menu/sprites/cauldron/cauldron.png" id="8_ybefq"]
 [ext_resource type="Texture2D" uid="uid://ckan14da3cdly" path="res://main_menu/sprites/spider/spidy.png" id="9_gpdyu"]
+[ext_resource type="Script" path="res://main_menu/Close.gd" id="11_60bau"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otq56"]
 bg_color = Color(0.172549, 0.352941, 0.278431, 1)
@@ -651,7 +652,7 @@ animation = &"smoke"
 autoplay = "default"
 
 [node name="Spider" type="AnimatedSprite2D" parent="Panel"]
-position = Vector2(962, 68)
+position = Vector2(915, 68)
 scale = Vector2(4.2, 4.2)
 sprite_frames = SubResource("SpriteFrames_nm08b")
 animation = &"up_and_down"
@@ -694,3 +695,15 @@ text = "QUIT"
 libraries = {
 "": SubResource("AnimationLibrary_awsbg")
 }
+
+[node name="Close" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 8.0
+offset_right = 1017.0
+offset_bottom = 48.0
+theme = ExtResource("2_gfi3c")
+text = "X"
+script = ExtResource("11_60bau")
+
+[connection signal="pressed" from="Panel/Close" to="Panel/Close" method="_on_pressed"]

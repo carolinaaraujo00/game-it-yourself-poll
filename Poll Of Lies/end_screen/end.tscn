@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://djhv6qd8qi3xs"]
+[gd_scene load_steps=61 format=3 uid="uid://djhv6qd8qi3xs"]
 
 [ext_resource type="Script" path="res://end_screen/End.gd" id="1_yqypu"]
 [ext_resource type="Texture2D" uid="uid://dgt1v8c2j4w1u" path="res://main_menu/sprites/blue_witch/B_witch_attack.png" id="2_fpmhd"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dsc87yovh6cfw" path="res://main_menu/sprites/blue_witch/B_witch_run.png" id="5_teqbr"]
 [ext_resource type="Texture2D" uid="uid://ds3tg6yfxlhrs" path="res://main_menu/sprites/blue_witch/B_witch_take_damage.png" id="6_nrbxc"]
 [ext_resource type="Texture2D" uid="uid://ckan14da3cdly" path="res://main_menu/sprites/spider/spidy.png" id="8_6ckxa"]
+[ext_resource type="Script" path="res://main_menu/Close.gd" id="9_subbb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqkw2"]
 bg_color = Color(0.172549, 0.352941, 0.278431, 1)
@@ -461,4 +462,14 @@ sprite_frames = SubResource("SpriteFrames_kky7i")
 animation = &"up_and_down"
 autoplay = "up_and_down"
 
+[node name="Close" type="Button" parent="."]
+offset_left = 976.0
+offset_top = 8.0
+offset_right = 1017.0
+offset_bottom = 48.0
+theme = ExtResource("2_fuxdr")
+text = "X"
+script = ExtResource("9_subbb")
+
 [connection signal="pressed" from="Panel/VBoxContainer2/MarginContainer/BtnBackToMenu" to="." method="_on_btn_back_to_menu_pressed"]
+[connection signal="pressed" from="Close" to="Close" method="_on_pressed"]

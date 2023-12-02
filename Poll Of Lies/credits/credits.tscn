@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dyerexrbkmw8o"]
+[gd_scene load_steps=44 format=3 uid="uid://dyerexrbkmw8o"]
 
 [ext_resource type="Texture2D" uid="uid://dgt1v8c2j4w1u" path="res://main_menu/sprites/blue_witch/B_witch_attack.png" id="2_7m11m"]
 [ext_resource type="Texture2D" uid="uid://c735dj1vw731n" path="res://main_menu/sprites/blue_witch/B_witch_charge.png" id="3_6xiox"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dsc87yovh6cfw" path="res://main_menu/sprites/blue_witch/B_witch_run.png" id="5_1e1de"]
 [ext_resource type="Texture2D" uid="uid://ds3tg6yfxlhrs" path="res://main_menu/sprites/blue_witch/B_witch_take_damage.png" id="6_h0ms1"]
 [ext_resource type="Theme" uid="uid://b2g8ex2eim5as" path="res://util/game_theme.tres" id="6_v53xc"]
+[ext_resource type="Script" path="res://main_menu/Close.gd" id="7_ibm5k"]
 
 [sub_resource type="GDScript" id="GDScript_mkwug"]
 script/source = "extends Node
@@ -400,4 +401,14 @@ TO RAISE AWARENESS AND PROWESS
 IN HEALTHCARE MEDIA LITERACY"
 horizontal_alignment = 1
 
+[node name="Close" type="Button" parent="."]
+offset_left = 976.0
+offset_top = 8.0
+offset_right = 1017.0
+offset_bottom = 48.0
+theme = ExtResource("6_v53xc")
+text = "X"
+script = ExtResource("7_ibm5k")
+
 [connection signal="pressed" from="Panel/VBoxContainer/BtnBackToMenu" to="." method="_on_btn_back_to_menu_pressed"]
+[connection signal="pressed" from="Close" to="Close" method="_on_pressed"]
