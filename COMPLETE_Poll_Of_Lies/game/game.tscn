@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://lht5h65k8eij"]
+[gd_scene load_steps=11 format=3 uid="uid://lht5h65k8eij"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_cyo7l"]
 [ext_resource type="Theme" uid="uid://b2g8ex2eim5as" path="res://util/game_theme.tres" id="2_id01g"]
+[ext_resource type="Script" path="res://main_menu/Close.gd" id="3_kw12y"]
 [ext_resource type="Texture2D" uid="uid://c1r05l1ix5dk0" path="res://game/sprites/sprite_fail_attempt.png" id="3_rh4cq"]
 [ext_resource type="Script" path="res://game/posts/Post.gd" id="3_ttax2"]
 
@@ -255,3 +256,14 @@ script = ExtResource("3_ttax2")
 libraries = {
 "": SubResource("AnimationLibrary_pq3wy")
 }
+
+[node name="Close" type="Button" parent="."]
+offset_left = 976.0
+offset_top = 8.0
+offset_right = 1017.0
+offset_bottom = 48.0
+theme = ExtResource("2_id01g")
+text = "X"
+script = ExtResource("3_kw12y")
+
+[connection signal="pressed" from="Close" to="Close" method="_on_pressed"]

@@ -40,7 +40,6 @@ func _on_dialogue_end(_arg):
 	button_container.visible = true
 
 
-
 func _on_start_pressed():
 	get_tree().change_scene_to_file(Util.GAME_SCENE)
 

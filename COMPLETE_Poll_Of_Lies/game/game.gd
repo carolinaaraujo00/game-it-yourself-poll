@@ -36,12 +36,12 @@ func _ready():
 
 
 func assign_random_images_to_posts() -> void:
-	# 50-50% random chance for the posts to either be true or false, so it doesn't get predictable
-	# Remember that when one is true, the other has to be false!
-	
-	# Create a random number between 0 and 1
+# 50-50% random chance for the posts to either
+# be true or false, so it doesn't get predictable
+
+# Remember that when one is true, the other has to be false!
+# Create a random number between 0 and 1
 	var chance_true_or_fake = randf()
-	
 	# If the number is greater than 0.5,
 	# the left post will be false and the right will be true
 	if (chance_true_or_fake > 0.5):
@@ -78,7 +78,6 @@ func update_score() -> void:
 	
 	# Update the text to show this new, increased score
 	_score_label.text = "SCORE: " + str(score)
-	
 	verify_win_or_loss()
 
 
