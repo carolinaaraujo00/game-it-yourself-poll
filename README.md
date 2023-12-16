@@ -24,6 +24,8 @@ Game developed by [Carolina Araújo](https://github.com/carolinaaraujo00) and [F
 ---
 ## Poll of Lies
 
+**NOTE:** TO RUN THE GAME IN GODOT, DUE TO VERSION DIFFERENCES, IT MIGHT BE NECESSARY TO OPEN, CLOSE AND REOPEN THE PROJECT.
+
 This game involves players in an activity designed to improve their media literacy skills.
 
 From a simple, user-friendly menu that introduces the game's goal, the players move onto a screen displaying two distinct healthcare-related social media posts. One of these posts contains false, unsubstantiated, and/or misleading information, while the other is true and accurate. Consequently, the player must utilize the internet to search for information that helps determine which post is truthful.
