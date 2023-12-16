@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://dwilrs6jlc0r8"]
+
+[ext_resource type="Script" path="res://audio/SoundManager.gd" id="1_fio71"]
+[ext_resource type="AudioStream" uid="uid://25ejb30fgfqi" path="res://audio/audio_files/MUSIC/Menu music.ogg" id="2_3s44x"]
+[ext_resource type="AudioStream" uid="uid://5i4vdwwg48ks" path="res://audio/audio_files/UI/click.wav" id="4_ab573"]
+[ext_resource type="AudioStream" uid="uid://du2l74ausv5np" path="res://audio/audio_files/witch-cackle.ogg" id="4_xwtj5"]
+[ext_resource type="AudioStream" uid="uid://m6ms1usdwubt" path="res://audio/audio_files/UI/correct.wav" id="5_5qqk4"]
+[ext_resource type="AudioStream" uid="uid://c1yqiwmuaxgwr" path="res://audio/audio_files/ambience_menu.ogg" id="6_1idry"]
+[ext_resource type="AudioStream" uid="uid://d2ba6cc3hf27y" path="res://audio/audio_files/UI/error.ogg" id="6_ep0ux"]
+[ext_resource type="AudioStream" uid="uid://b8dgcvemvpjjb" path="res://audio/audio_files/MUSIC/Game Music.ogg" id="7_aaj62"]
+[ext_resource type="AudioStream" uid="uid://ck8sea8cbwhv1" path="res://audio/audio_files/MUSIC/sad_defeat.ogg" id="9_5iyiv"]
+[ext_resource type="AudioStream" uid="uid://btuu7qorpg3jr" path="res://audio/audio_files/MUSIC/Victory.ogg" id="11_iwx88"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_fio71")
+
+[node name="MenuMusic" type="Node" parent="."]
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="MenuMusic"]
+stream = ExtResource("2_3s44x")
+volume_db = -10.0
+bus = &"Music"
+
+[node name="UIAudio" type="Node" parent="."]
+
+[node name="Click" type="AudioStreamPlayer" parent="UIAudio"]
+stream = ExtResource("4_ab573")
+volume_db = 24.0
+bus = &"Sounds"
+
+[node name="Correct" type="AudioStreamPlayer" parent="UIAudio"]
+stream = ExtResource("5_5qqk4")
+volume_db = -10.0
+bus = &"Sounds"
+
+[node name="Error" type="AudioStreamPlayer" parent="UIAudio"]
+stream = ExtResource("6_ep0ux")
+volume_db = -10.0
+bus = &"Sounds"
+
+[node name="MainMenuAudio" type="Node" parent="."]
+
+[node name="WitchLaugh" type="AudioStreamPlayer" parent="MainMenuAudio"]
+stream = ExtResource("4_xwtj5")
+volume_db = -10.0
+bus = &"Sounds"
+
+[node name="ambience_menu" type="AudioStreamPlayer" parent="MainMenuAudio"]
+stream = ExtResource("6_1idry")
+volume_db = -20.0
+
+[node name="GameMusic" type="Node" parent="."]
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="GameMusic"]
+stream = ExtResource("7_aaj62")
+volume_db = -20.0
+bus = &"Music"
+
+[node name="GameEnd" type="Node" parent="."]
+
+[node name="LossSound" type="AudioStreamPlayer" parent="GameEnd"]
+stream = ExtResource("9_5iyiv")
+volume_db = -15.0
+bus = &"Music"
+
+[node name="WinSound" type="AudioStreamPlayer" parent="GameEnd"]
+stream = ExtResource("11_iwx88")
+volume_db = -25.0
